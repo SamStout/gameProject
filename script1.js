@@ -23,6 +23,7 @@ let column7Counter = 0;
 
 
 
+  
 //let boardArr = Array.from(box);
 //let columnArr1 = Array.from(column1)
 
@@ -45,11 +46,14 @@ let column7Counter = 0;
     // console.log(player1);
 //}
 
+
 const handlePlacementColumn1 = () => {
     if (player1 === true){
-        box[5 - column1Counter].innerHTML = "hoiyeh";
+        let X = box[5 - column1Counter]
+        X.innerHTML = "X";
+        X.classList.add("X");
     } else {
-        box[5 - column1Counter].innerHTML = "ohBBY";
+        box[5 - column1Counter].innerHTML = "O";
     }    
     
     if (column1Counter<5) {
@@ -59,9 +63,12 @@ const handlePlacementColumn1 = () => {
 
 const handlePlacementColumn2 = () => {
     if (player1 === true){
-    box[11 - column2Counter].innerHTML = "hoiyeh";
+        let X = box[11 - column2Counter]
+        X.innerHTML = "X";
+        X.classList.add("X");
     }
-    else { box[11 - column2Counter].innerHTML = "OhBBY";
+    else { 
+        box[11 - column2Counter].innerHTML = "O";
     }
     
     if (column2Counter<5) {
@@ -71,9 +78,11 @@ const handlePlacementColumn2 = () => {
 
 const handlePlacementColumn3 = () => {
     if (player1 === true){
-    box[17 - column3Counter].innerHTML = "hoiyeh";
+        let X = box[17 - column3Counter]
+        X.innerHTML = "X";
+        X.classList.add("X");
     } else {
-        box[17 - column3Counter].innerHTML = "OhBBY";
+        box[17 - column3Counter].innerHTML = "O";
     }
     
     if (column3Counter<5) {
@@ -83,9 +92,11 @@ const handlePlacementColumn3 = () => {
 
 const handlePlacementColumn4 = () => {
     if (player1 === true){
-    box[23 - column4Counter].innerHTML = "hoiyeh";
+        let X = box[23 - column4Counter]
+        X.innerHTML = "X";
+        X.classList.add("X");
     } else {
-        box[23 - column4Counter].innerHTML = "ohBBY";
+        box[23 - column4Counter].innerHTML = "O";
     }
 
     if (column4Counter<5) {
@@ -94,9 +105,11 @@ const handlePlacementColumn4 = () => {
 }
 const handlePlacementColumn5 = () => {
     if (player1 === true){
-    box[29 - column5Counter].innerHTML = "hoiyeh";
+        let X = box[29 - column5Counter]
+        X.innerHTML = "X";
+        X.classList.add("X");
     }else {
-        box[29 - column5Counter].innerHTML = "ohBBY";
+        box[29 - column5Counter].innerHTML = "O";
     }
     
     if (column5Counter<5) {
@@ -106,9 +119,11 @@ const handlePlacementColumn5 = () => {
 
 const handlePlacementColumn6 = () => {
     if (player1 === true){
-    box[35 - column6Counter].innerHTML = "hoiyeh";
+        let X = box[35 - column6Counter]
+        X.innerHTML = "X";
+        X.classList.add("X");
     }else{
-        box[35 - column6Counter].innerHTML = "OhBBY";
+        box[35 - column6Counter].innerHTML = "O";
     }
 
     if (column6Counter<5) {
@@ -118,15 +133,19 @@ const handlePlacementColumn6 = () => {
 
 const handlePlacementColumn7 = () => {
     if (player1 === true){
-    box[41 - column7Counter].innerHTML = "hoiyeh";
+        let X = box[41 - column7Counter]
+        X.innerHTML = "X";
+        X.classList.add("X");
     } else {
-        box[41 - column7Counter].innerHTML = "OhBBY";
+        box[41 - column7Counter].innerHTML = "O";
     }
    
     if (column7Counter<5) {
         column7Counter++
     }
 }
+
+
 
 button1.addEventListener("click", handlePlacementColumn1,)
 button2.addEventListener("click", handlePlacementColumn2)
