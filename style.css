@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    display: inline-flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.gameboard {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.box{
+    display: flex;
+    border: red 1px solid;
+    background-color: antiquewhite;
+    height:100px;
+    width: 100px;
+} 
+
+
+
+.box {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
