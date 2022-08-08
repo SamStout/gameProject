@@ -36,6 +36,7 @@ const handlePlacementColumn1 = () => {
         if (column1Counter < 6) {
             column1Counter++
         };
+    
     } else{ 
         alert("that row filled")
     }
@@ -44,10 +45,10 @@ const handlePlacementColumn1 = () => {
 const handlePlacementColumn2 = () => {
     if (column2Counter < 6) {
         if (player1 === true){
-        let X = box[11 - column2Counter]
-        X.innerHTML = "X";
-        X.classList.add("X");
-        player1 = false; 
+            let X = box[11 - column2Counter]
+            X.innerHTML = "X";
+            X.classList.add("X");
+            player1 = false; 
         } else { 
             box[11 - column2Counter].innerHTML = "O";
             player1 = true;
@@ -56,30 +57,32 @@ const handlePlacementColumn2 = () => {
         if (column2Counter < 6) {
             column2Counter++
         }
+   
     } else { 
-    alert("that row filled")
+        alert("that row filled")
     }
 }
 
 const handlePlacementColumn3 = () => {
     if (column3Counter < 6) {
         if (player1 === true){
-        let X = box[17 - column3Counter]
-        X.innerHTML = "X";
-        X.classList.add("X");
-        player1 = false; 
+            let X = box[17 - column3Counter]
+            X.innerHTML = "X";
+            X.classList.add("X");
+            player1 = false; 
         } else{
-        box[17 - column3Counter].innerHTML = "O";
-        player1 = true;
+            box[17 - column3Counter].innerHTML = "O";
+            player1 = true;
         }
         
         if (column3Counter<6) {
-        column3Counter++
+            column3Counter++
         }
-    } else{ 
-    alert("that row filled")
+   
+    } else { 
+        alert("that row filled")
     }
-    }
+}
 
 const handlePlacementColumn4 = () => {
     if (column4Counter < 6) {
@@ -100,22 +103,22 @@ const handlePlacementColumn4 = () => {
     } else { 
         alert("that row filled")
     }
-    }
+}
 
 const handlePlacementColumn5 = () => {
     if (column5Counter < 6) {
         if (player1 === true){
-        let X = box[29 - column5Counter]
-        X.innerHTML = "X";
-        X.classList.add("X");
-        player1 = false; 
+            let X = box[29 - column5Counter]
+            X.innerHTML = "X";
+            X.classList.add("X");
+            player1 = false; 
         } else {
-        box[29 - column5Counter].innerHTML = "O";
-        player1 = true;
+            box[29 - column5Counter].innerHTML = "O";
+            player1 = true;
         }
     
         if (column5Counter<6) {
-        column5Counter++
+            column5Counter++
         }
 
     } else { 
@@ -147,20 +150,21 @@ const handlePlacementColumn6 = () => {
 const handlePlacementColumn7 = () => {
     if (column7Counter < 6) {
         if (player1 === true){
-        let X = box[41 - column7Counter]
-        X.innerHTML = "X";
-        X.classList.add("X");
-        player1 = false; 
+            let X = box[41 - column7Counter]
+            X.innerHTML = "X";
+            X.classList.add("X");
+            player1 = false; 
         } else{
-        box[41 - column7Counter].innerHTML = "O";
-        player1 = true;
+            box[41 - column7Counter].innerHTML = "O";
+            player1 = true;
         }
         
         if (column7Counter<6) {
-        column7Counter++
+            column7Counter++
         }
-    }else{ 
-    alert("that row filled")
+    
+    } else { 
+        alert("that row filled")
     }
 }
 
