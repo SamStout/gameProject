@@ -10,7 +10,7 @@ const button4 = document.querySelector(".button4")
 const button5 = document.querySelector(".button5") 
 const button6 = document.querySelector(".button6")  
 const button7 = document.querySelector(".button7")  
-
+const turnIndicator = document.querySelector(".turnIndicator")
 
 let player1 = true;
 let column1Counter = 0; 
@@ -21,44 +21,26 @@ let column5Counter = 0;
 let column6Counter = 0;
 let column7Counter = 0;
 
-
-
-  
-//let boardArr = Array.from(box);
-//let columnArr1 = Array.from(column1)
-
-//columnArr1.forEach = () => {
-    
-//}
-
-//column.forEach(element => {
-  //  let columnCounter = 0
-//})
-
-
-//const handleTurnChange = () => {
-//    if (player1 === true) {
-  //      player1 = false
-    // } else {
-      //  return player1 = true
-    // };
-    // return player1
-    // console.log(player1);
-//}
-
-
 const handlePlacementColumn1 = () => {
-    if (player1 === true){
-        let X = box[5 - column1Counter]
-        X.innerHTML = "X";
-        X.classList.add("X");
-    } else {
-        box[5 - column1Counter].innerHTML = "O";
-    }    
-    
-    if (column1Counter<5) {
-        column1Counter++
-    };
+    if (column1Counter < 6) {
+        if (player1 === true){
+            let X = box[5 - column1Counter]
+            X.innerHTML = "X";
+            X.classList.add("X");
+            player1 = false;    
+        } else {
+            box[5 - column1Counter].innerHTML = "O";
+            player1 = true;
+        }    
+        
+        if (column1Counter < 6) {
+            column1Counter++
+            console.log (column1Counter)
+        };
+    }
+    else{ 
+        alert("that row filled")
+    }
 }  
 
 const handlePlacementColumn2 = () => {
@@ -66,9 +48,12 @@ const handlePlacementColumn2 = () => {
         let X = box[11 - column2Counter]
         X.innerHTML = "X";
         X.classList.add("X");
+                player1 = false; 
+
     }
     else { 
         box[11 - column2Counter].innerHTML = "O";
+        player1 = true;
     }
     
     if (column2Counter<5) {
@@ -81,8 +66,11 @@ const handlePlacementColumn3 = () => {
         let X = box[17 - column3Counter]
         X.innerHTML = "X";
         X.classList.add("X");
-    } else {
+        player1 = false; 
+} else
+     {
         box[17 - column3Counter].innerHTML = "O";
+        player1 = true;
     }
     
     if (column3Counter<5) {
@@ -95,21 +83,28 @@ const handlePlacementColumn4 = () => {
         let X = box[23 - column4Counter]
         X.innerHTML = "X";
         X.classList.add("X");
-    } else {
+        player1 = false; 
+} else
+     {
         box[23 - column4Counter].innerHTML = "O";
+        player1 = true;
     }
 
     if (column4Counter<5) {
         column4Counter++
     };
 }
+
 const handlePlacementColumn5 = () => {
     if (player1 === true){
         let X = box[29 - column5Counter]
         X.innerHTML = "X";
         X.classList.add("X");
-    }else {
+        player1 = false; 
+}else 
+    {
         box[29 - column5Counter].innerHTML = "O";
+        player1 = true;
     }
     
     if (column5Counter<5) {
@@ -122,8 +117,11 @@ const handlePlacementColumn6 = () => {
         let X = box[35 - column6Counter]
         X.innerHTML = "X";
         X.classList.add("X");
-    }else{
+        player1 = false; 
+}else
+    {
         box[35 - column6Counter].innerHTML = "O";
+        player1 = true;
     }
 
     if (column6Counter<5) {
@@ -136,16 +134,17 @@ const handlePlacementColumn7 = () => {
         let X = box[41 - column7Counter]
         X.innerHTML = "X";
         X.classList.add("X");
-    } else {
+        player1 = false; 
+} else
+     {
         box[41 - column7Counter].innerHTML = "O";
+        player1 = true;
     }
    
-    if (column7Counter<5) {
+    if (column7Counter<6) {
         column7Counter++
     }
 }
-
-
 
 button1.addEventListener("click", handlePlacementColumn1,)
 button2.addEventListener("click", handlePlacementColumn2)
@@ -158,14 +157,18 @@ button7.addEventListener("click", handlePlacementColumn7)
 buttons.forEach(element => {
 element.addEventListener("click", handleTurnChange = () => {
     if (player1 === false) {
-        player1 = true;
+        turnIndicator.innerHTML = "blu"
+        turnIndicator.classList.add ("X")
      } else if (player1 === true) {
-        player1 = false
+        turnIndicator.innerHTML = "Black"
+        turnIndicator.classList.remove ("X")
      };
-     console.log(player1);
+     
 })
 });
 
+//bugs: make it so that you cant change the turn indicator for top when row filled
+//can make handle turnchange standallone and call within handle placement
 //create grid
 //click button, insert X or O into next available slot
 //create array for each column using boardArr []
