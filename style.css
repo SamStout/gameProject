@@ -9,13 +9,18 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #FCF5C7;
-   
 }
 
 h1 {
     color: black;
     font: bold;
-    font-size: 70px;
+    font-size: 50px;
+}
+
+.newGame{
+    size: 10 px;
+    width: 70vh;
+    background-color: #FFC09F;
 }
 
 
@@ -23,7 +28,6 @@ h1 {
 
 .gameboard {
     display: flex;
-   
 }
 
 .turnIndicator{

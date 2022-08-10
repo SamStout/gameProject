@@ -10,6 +10,7 @@ const button5 = document.querySelector(".button5")
 const button6 = document.querySelector(".button6")  
 const button7 = document.querySelector(".button7")  
 const turnIndicator = document.querySelector(".turnIndicator")
+const newGame = document.querySelector(".newGame")
 
 let player1 = true;
 let column1Counter = 0; 
@@ -23,6 +24,9 @@ let column7Counter = 0;
 let arrayColumn1 = ""
 
 
+const handleNewGame = () => {
+    location.reload();
+}
 
 
 const handlePlacementColumn1 = () => {
@@ -187,8 +191,8 @@ const handlePlacementColumn7 = () => {
         alert("That row is filled")
     }
 }
-
-button1.addEventListener("click", handlePlacementColumn1,)
+newGame.addEventListener("click", handleNewGame)
+button1.addEventListener("click", handlePlacementColumn1)
 button2.addEventListener("click", handlePlacementColumn2)
 button3.addEventListener("click", handlePlacementColumn3)
 button4.addEventListener("click", handlePlacementColumn4)
