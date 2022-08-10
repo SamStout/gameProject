@@ -1,7 +1,6 @@
 const box = document.querySelectorAll(".box")
 const buttons = document.querySelectorAll("button")
 const column = document.querySelectorAll(".column")
-const column1 = document.querySelector(".column1")
 const box1 = document.querySelector(".box1")
 const button2 = document.querySelector(".button2") 
 const button1 = document.querySelector(".button1")
@@ -21,15 +20,24 @@ let column5Counter = 0;
 let column6Counter = 0;
 let column7Counter = 0;
 
+let arrayColumn1 = ""
+
+
+
+
 const handlePlacementColumn1 = () => {
     if (column1Counter < 6) {
         if (player1 === true){
             let X = box[5 - column1Counter]
             X.innerHTML = "X";
+            arrayColumn1 += "X" ;
             X.classList.add("X");
             player1 = false;    
         } else {
-            box[5 - column1Counter].innerHTML = "O";
+            let O = box[5 - column1Counter]
+            O.innerHTML = "O";
+            arrayColumn1 += ("O");
+            O.classList.add("O");
             player1 = true;
         }    
         
@@ -38,19 +46,21 @@ const handlePlacementColumn1 = () => {
         };
     
     } else{ 
-        alert("that row filled")
+        alert("That row is filled")
     }
 }  
 
 const handlePlacementColumn2 = () => {
     if (column2Counter < 6) {
         if (player1 === true){
-            let X = box[11 - column2Counter]
+            let X = box[11 - column2Counter];
             X.innerHTML = "X";
             X.classList.add("X");
             player1 = false; 
         } else { 
-            box[11 - column2Counter].innerHTML = "O";
+            let O = box[11 - column2Counter];
+            O.innerHTML = "O";
+            O.classList.add("O")
             player1 = true;
         }
     
@@ -59,7 +69,7 @@ const handlePlacementColumn2 = () => {
         }
    
     } else { 
-        alert("that row filled")
+        alert("That row is filled")
     }
 }
 
@@ -71,7 +81,9 @@ const handlePlacementColumn3 = () => {
             X.classList.add("X");
             player1 = false; 
         } else{
-            box[17 - column3Counter].innerHTML = "O";
+            let O = box[17 - column3Counter]
+            O.innerHTML = "O";
+            O.classList.add("O")
             player1 = true;
         }
         
@@ -80,7 +92,7 @@ const handlePlacementColumn3 = () => {
         }
    
     } else { 
-        alert("that row filled")
+        alert("That row filled")
     }
 }
 
@@ -92,7 +104,9 @@ const handlePlacementColumn4 = () => {
             X.classList.add("X");
             player1 = false; 
         } else{
-            box[23 - column4Counter].innerHTML = "O";
+            let O = box[23 - column4Counter]
+            O.innerHTML = "O";
+            O.classList.add("O")
             player1 = true;
         }
 
@@ -101,7 +115,7 @@ const handlePlacementColumn4 = () => {
         }
     
     } else { 
-        alert("that row filled")
+        alert("That row is filled")
     }
 }
 
@@ -113,7 +127,9 @@ const handlePlacementColumn5 = () => {
             X.classList.add("X");
             player1 = false; 
         } else {
-            box[29 - column5Counter].innerHTML = "O";
+            let O = box[29 - column5Counter]
+            O.innerHTML = "O";
+            O.classList.add("O")
             player1 = true;
         }
     
@@ -122,7 +138,7 @@ const handlePlacementColumn5 = () => {
         }
 
     } else { 
-        alert("that row filled")
+        alert("That row is filled")
     }
 }
 
@@ -134,7 +150,9 @@ const handlePlacementColumn6 = () => {
             X.classList.add("X");
             player1 = false; 
         }else{
-            box[35 - column6Counter].innerHTML = "O";
+            let O = box[35 - column6Counter]
+            O.innerHTML = "O";
+            O.classList.add("O")
             player1 = true;
             }
 
@@ -143,7 +161,7 @@ const handlePlacementColumn6 = () => {
             }
     
     } else { 
-        alert("that row filled")
+        alert("That row is filled")
     }
 }
 
@@ -155,7 +173,9 @@ const handlePlacementColumn7 = () => {
             X.classList.add("X");
             player1 = false; 
         } else{
-            box[41 - column7Counter].innerHTML = "O";
+            let O = box[41 - column7Counter]
+            O.innerHTML = "O";
+            O.classList.add("O")
             player1 = true;
         }
         
@@ -164,7 +184,7 @@ const handlePlacementColumn7 = () => {
         }
     
     } else { 
-        alert("that row filled")
+        alert("That row is filled")
     }
 }
 
@@ -179,15 +199,21 @@ button7.addEventListener("click", handlePlacementColumn7)
 buttons.forEach(element => {
 element.addEventListener("click", handleTurnChange = () => {
     if (player1 === true) {
-        turnIndicator.innerHTML = "blu"
+        turnIndicator.innerHTML = "It is Blue's turn"
         turnIndicator.classList.add ("X")
      } else if (player1 === false) {
-        turnIndicator.innerHTML = "Blue"
+        turnIndicator.innerHTML = "It is Red's turn"
         turnIndicator.classList.remove ("X")
      };
      
 })
 });
+
+
+console.log(arrayColumn1);
+
+
+
 
 //bugs: make it so that you cant change the turn indicator for top when row filled
 //can make handle turnchange standallone and call within handle placement
